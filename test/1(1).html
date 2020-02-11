@@ -148,6 +148,8 @@
         var oldSrc;
 		function chooseImg(event) {
 			$(".imga1").css("background-image", "")
+			$(`<img id="previewImg" />`).appendTo($(".ima"))
+
 			var files = event.files || event.dataTransfer.files
 			var reader = new FileReader()
 			reader.readAsDataURL(files[0])
@@ -210,7 +212,6 @@
 					var img = convertCanvasToImage(mycans);
 					//将img插入容器 
 					$(".ima").html(img);
-					$(`<img id="previewImg" />`).appendTo($(".ima"))
 				}
 			});
 
